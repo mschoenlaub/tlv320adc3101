@@ -1,0 +1,30 @@
+[package]
+name = "tlv320adc3101"
+version = "0.1.0"
+edition = "2024"
+# Tested in CI (.github/workflows/ci.yml, job `msrv`).
+rust-version = "1.87"
+description = "no_std embedded-hal 1.0 driver for the TI TLV320ADC3101 stereo audio ADC with microphone preamplifiers"
+license = "MIT OR Apache-2.0"
+authors = ["Manuel Schönlaub"]
+repository = "https://github.com/mschoenlaub/tlv320adc3101"
+readme = "README.md"
+keywords = ["embedded-hal-driver", "audio", "adc", "tlv320", "no-std"]
+categories = ["embedded", "no-std", "hardware-support", "multimedia::audio"]
+include = ["src/**/*.rs", "README.md", "CHANGELOG.md", "LICENSE-MIT", "LICENSE-APACHE"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[dependencies]
+embedded-hal = "1.0"
+
+[dev-dependencies]
+embedded-hal-mock = { version = "0.11", default-features = false, features = ["eh1"] }
+
+[lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
